@@ -4,5 +4,5 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  plugins: [react(), tsconfigPaths(), svgr({ svgrOptions: { icon: true } })],
+  plugins: [react(), tsconfigPaths(), svgr({ svgrOptions: { icon: true } })]
 });

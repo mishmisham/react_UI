@@ -23,52 +23,50 @@ $danger-shadow: var(--danger-shadow);
 $disabled-opacity: 0.35;
 $error-color: rgb(255, 102, 102);
 
-
 :root {
-    // Светлая тема
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --danger-color: #e74c3c;
-  
-    --primary-text-color: #fff;
-    --secondary-text-color: #fff;
-    --danger-text-color: #fff;
-  
-    --background-light: #f9f9f9;
-    --background-dark: #222222;
-    --text-color-middle: #707070;
-    --text-color-light: #ffffff;
-    --text-color-dark: #222222;
-    --placeholder-color: #a3a3a338;
-    --border-color: #444444;
-    --box-shadow-color: rgba(0, 0, 0, 0.1);
-  
-    --primary-shadow: rgba(232, 37, 53, 0.4);
-    --secondary-shadow: rgba(46, 204, 113, 0.4);
-    --danger-shadow: rgba(231, 76, 60, 0.4);
-  }
-  
-  // Темная тема
-  .dark-theme {
-    --primary-color: #2ecc71;
-    --secondary-color: #3498db;
-    --danger-color: #e74c3c;
-  
-    --primary-text-color: #222;
-    --secondary-text-color: #fff;
-    --danger-text-color: #fff;
-  
-    --background-light: #333;
-    --background-dark: #111;
-    --text-color-light: #ffffff;
-    --text-color-middle: #ffffff;
-    --text-color-dark: #ffffff;
-    --placeholder-color: #444444;
-    --border-color: #555555;
-    --box-shadow-color: rgba(100, 100, 100, 0.1);
+  // Светлая тема
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --danger-color: #e74c3c;
 
-    --primary-shadow: rgba(46, 204, 113, 0.4);
-    --secondary-shadow: rgba(37, 85, 232, 0.4);
-    --danger-shadow: rgba(231, 76, 60, 0.4);
-  }
-  
+  --primary-text-color: #fff;
+  --secondary-text-color: #fff;
+  --danger-text-color: #fff;
+
+  --background-light: #f9f9f9;
+  --background-dark: #222222;
+  --text-color-middle: #707070;
+  --text-color-light: #ffffff;
+  --text-color-dark: #222222;
+  --placeholder-color: #a3a3a338;
+  --border-color: #444444;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+
+  --primary-shadow: rgba(232, 37, 53, 0.4);
+  --secondary-shadow: rgba(46, 204, 113, 0.4);
+  --danger-shadow: rgba(231, 76, 60, 0.4);
+}
+
+// Темная тема
+.dark-theme {
+  --primary-color: #2ecc71;
+  --secondary-color: #3498db;
+  --danger-color: #e74c3c;
+
+  --primary-text-color: #222;
+  --secondary-text-color: #fff;
+  --danger-text-color: #fff;
+
+  --background-light: #333;
+  --background-dark: #111;
+  --text-color-light: #ffffff;
+  --text-color-middle: #ffffff;
+  --text-color-dark: #ffffff;
+  --placeholder-color: #444444;
+  --border-color: #555555;
+  --box-shadow-color: rgba(100, 100, 100, 0.1);
+
+  --primary-shadow: rgba(46, 204, 113, 0.4);
+  --secondary-shadow: rgba(37, 85, 232, 0.4);
+  --danger-shadow: rgba(231, 76, 60, 0.4);
+}

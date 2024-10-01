@@ -2,11 +2,10 @@
 @import './collections/index.scss';
 
 .App {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: $background-light;
-  }
-  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $background-light;
+}

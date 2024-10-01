@@ -32,11 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button
-      disabled={isLoading || disabled}
-      className={`btn btn--${type}`}
-      onClick={handleClick}
-    >
+    <button disabled={isLoading || disabled} className={`btn btn--${type}`} onClick={handleClick}>
       {isLoading && <span className="loader"></span>}
       <span style={{ opacity: isLoading ? 0 : 1 }}>
         {children} {/* Отображение иконки */}
