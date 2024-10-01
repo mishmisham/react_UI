@@ -1,6 +1,11 @@
 @import './base/index.scss';
 @import './collections/index.scss';
 
+html {
+  scroll-behavior: smooth;
+  background-color: $background-light;
+}
+
 .App {
   min-height: 100vh;
   display: flex;
@@ -8,4 +13,25 @@
   justify-content: center;
   align-items: center;
   background: $background-light;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    color: $primary-color;
+  }
 }

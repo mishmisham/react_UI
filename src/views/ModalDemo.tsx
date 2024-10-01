@@ -23,7 +23,9 @@ const ModalDemo: React.FC = () => {
           <tr>
             <td>Базовое модальное окно</td>
             <td>
-              <button onClick={() => setIsOpenBasic(true)}>Открыть</button>
+              <button 
+                  className="table-btn"
+                  onClick={() => setIsOpenBasic(true)}>Открыть</button>
               <Modal
                 isOpen={isOpenBasic}
                 onClose={() => setIsOpenBasic(false)}
@@ -37,7 +39,9 @@ const ModalDemo: React.FC = () => {
           <tr>
             <td>Модальное окно без оверлея</td>
             <td>
-              <button onClick={() => setIsOpenNoOverlay(true)}>Открыть</button>
+              <button 
+                  className="table-btn"
+                  onClick={() => setIsOpenNoOverlay(true)}>Открыть</button>
               <Modal
                 isOpen={isOpenNoOverlay}
                 onClose={() => setIsOpenNoOverlay(false)}
@@ -52,14 +56,18 @@ const ModalDemo: React.FC = () => {
           <tr>
             <td>Вложенное модальное окно</td>
             <td>
-              <button onClick={() => setIsOpenNested(true)}>Открыть</button>
+              <button 
+                  className="table-btn"
+                  onClick={() => setIsOpenNested(true)}>Открыть</button>
               <Modal
                 isOpen={isOpenNested}
                 onClose={() => setIsOpenNested(false)}
                 title="Вложенное окно"
               >
                 <p>Это модальное окно с другим окном внутри.</p>
-                <button onClick={() => setIsOpenBasic(true)}>Открыть вложенное</button>
+                <button 
+                  className="table-btn"
+                  onClick={() => setIsOpenBasic(true)}>Открыть вложенное</button>
               </Modal>
             </td>
             <td>Модальное окно с возможностью открывать еще одно модальное окно внутри.</td>
@@ -67,7 +75,9 @@ const ModalDemo: React.FC = () => {
           <tr>
             <td>Модальное окно в правом верхнем углу</td>
             <td>
-              <button onClick={() => setIsOpenTopRight(true)}>Открыть</button>
+              <button 
+                  className="table-btn"
+                  onClick={() => setIsOpenTopRight(true)}>Открыть</button>
               <Modal
                 isOpen={isOpenTopRight}
                 onClose={() => setIsOpenTopRight(false)}
