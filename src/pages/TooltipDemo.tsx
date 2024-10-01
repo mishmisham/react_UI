@@ -27,6 +27,7 @@ const TooltipDemo: React.FC = () => {
             <td>
               <Tooltip content="Этот тултип умеет определить позицию самостоятельно">
                 <button
+                  className="table-btn"
                   onMouseEnter={() => handleTooltipHover('Тултип активен')}
                   onMouseLeave={() => handleTooltipHover('')}
                 >

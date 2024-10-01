@@ -1,10 +1,16 @@
 @import '../../../assets/styles/collections/_variables.scss';
 
-$modal-background-color: $background-dark;
+$modal-background-color: $background-light;
 $modal-overlay-background: rgba(0, 0, 0, 0.5);
 $modal-border-color: #ccc;
 $modal-shadow-color: rgba(0, 0, 0, 0.1);
 $modal-close-button-color: $text-color-dark;
+
+// $modal-background-color: #ffffff;
+// $modal-overlay-background: rgba(0, 0, 0, 0.5);
+// $modal-border-color: #ccc;
+// $modal-shadow-color: rgba(0, 0, 0, 0.1);
+// $modal-close-button-color: #000000;
 
 .modal {
   position: fixed;
@@ -28,6 +34,10 @@ $modal-close-button-color: $text-color-dark;
     width: 90%;
     max-width: 500px;
     position: fixed;
+
+    p {
+      margin: 20px 0;
+    }
 
     &.top {
       top: 5%;

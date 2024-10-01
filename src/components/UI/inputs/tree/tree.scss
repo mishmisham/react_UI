@@ -13,6 +13,19 @@ $tree-input-list-item-selected-color: $primary-color;
 $tree-input-list-item-text-color: $text-color-dark;
 $tree-input-box-shadow: 0 0 20px 0 $box-shadow-color;
 
+// $tree-input-list-bg-color: #f9f9f9;
+// $tree-input-border-color: #444444;
+// $tree-input-list-bg-color-error: rgb(255, 102, 102);
+// $tree-input-label-color: #b0b0b0;
+// $tree-input-text-color: #222222;
+// $tree-input-placeholder-color: #757575;
+// $tree-input-list-bg-color: #f9f9f9;
+// $tree-input-list-item-hover-color: #333333;
+// $tree-input-list-item-selected-color: #1e88e5;
+// $tree-input-list-item-text-color: #222222;
+// $box-shadow-color: rgba(0, 0, 0, 0.1);
+// $tree-input-box-shadow: 0 0 20px 0 $box-shadow-color;
+
 .required {
   &::after {
     content: '*';

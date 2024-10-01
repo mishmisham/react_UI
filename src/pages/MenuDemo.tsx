@@ -30,7 +30,9 @@ const MenuDemo: React.FC = () => {
             <tr key={index}>
               <td>{`Меню с открытием/закрытием (${pos})`}</td>
               <td>
-                <button onClick={() => toggleMenu(index)}>
+                <button 
+                  className="table-btn"
+                  onClick={() => toggleMenu(index)}>
                   {menuVisibility[index] ? 'Скрыть меню' : 'Показать меню'}
                 </button>
                 <Menu
@@ -39,9 +41,11 @@ const MenuDemo: React.FC = () => {
                   isVisible={menuVisibility[index]}
                   onToggle={() => toggleMenu(index)}
                 >
-                  <h1>Menu Item 1</h1>
-                  <h1>Menu Item 2</h1>
-                  <h1>Menu Item 3</h1>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '10px', flexDirection: 'column', height: '100%' }}>
+                    <h1>Menu Item 1</h1>
+                    <h1>Menu Item 2</h1>
+                    <h1>Menu Item 3</h1>
+                  </div>
                 </Menu>
               </td>
               <td>{menuVisibility[index] ? 'Открыто' : 'Закрыто'}</td>

@@ -47,6 +47,15 @@
         min-width: 150px;
         text-overflow: ellipsis;
         color: $text-color-dark;
+
+        .table-btn {
+          background-color: $primary-color;
+          color: $primary-text-color;
+          border: none;
+          padding: 8px 12px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
       }
     }
   }

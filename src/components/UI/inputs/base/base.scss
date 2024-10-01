@@ -9,6 +9,16 @@ $input-text-color: $text-color-dark;
 $input-placeholder-color: $placeholder-color;
 $input-box-shadow: 0 0 20px 0 $box-shadow-color;
 
+// $input-bg-color: #f9f9f9;
+// $input-border-color: #444444;
+// $input-bg-color-error: rgb(255, 102, 102);
+// $input-label-color: #b0b0b0;
+// $input-label-color-dark: #ffffff;
+// $input-text-color: #222222;
+// $input-placeholder-color: #757575;
+// $input-box-shadow-color: rgba(0, 0, 0, 0.1);
+// $input-box-shadow: 0 0 20px 0 $input-box-shadow-color;
+
 .required {
   &::after {
     content: '*';

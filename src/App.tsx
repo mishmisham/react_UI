@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Demos from './pages';
 import '@/assets/styles/index.scss';
+import Moon from './assets/icons/Moon';
+import Sun from './assets/icons/Sun';
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<string>('light');
@@ -24,8 +26,8 @@ const App: React.FC = () => {
 
   return (
     <div className={`App`}>
-      <button onClick={toggleTheme}>
-        {theme === 'dark-theme' ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
+      <button onClick={toggleTheme} className="theme-toggle">
+        {theme === 'dark-theme' ? <Sun /> : <Moon />}
       </button>
 
       {/* <nav>

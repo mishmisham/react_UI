@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Chevron from '@/assets/icons/Chevron';
 import Checkbox from '@/components/UI/checkboxes/base/base';
 import './tree.scss';
@@ -43,6 +43,7 @@ const TreeSelect: React.FC<TreeSelectProps> = ({
   const [filter, setFilter] = useState('');
   const [expandedNodes, setExpandedNodes] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
+  const listRef = useRef<HTMLDivElement>(null);
 
   const handleSelect = (id: string, nodeDisabled?: boolean) => {
     if (nodeDisabled || disabled) return;
@@ -52,6 +53,19 @@ const TreeSelect: React.FC<TreeSelectProps> = ({
     setSelected(updatedSelected);
     onChange(updatedSelected);
   };
+
+  const handleDocumentClick = (event: MouseEvent) => {
+    if (listRef.current && !listRef.current.contains(event.target as Node)) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleDocumentClick);
+    return () => {
+      document.removeEventListener('mousedown', handleDocumentClick);
+    };
+  }, []);
 
   const toggleExpand = (id: string) => {
     if (disabled) return;
@@ -120,7 +134,7 @@ const TreeSelect: React.FC<TreeSelectProps> = ({
         <Chevron className={`chevron ${open ? 'open' : ''}`} />
       </div>
       {open && (
-        <div className={`tree-dropdown-list ${open ? 'open' : ''}`}>
+        <div ref={listRef} className={`tree-dropdown-list ${open ? 'open' : ''}`}>
           <div className="tree-list__item">{renderTree(data)}</div>
         </div>
       )}

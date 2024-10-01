@@ -15,6 +15,22 @@ $select-list-item-text-color: $text-color-dark;
 $select-list-item-subtext-color: #999999;
 $select-box-shadow: 0 0 20px 0 $box-shadow-color;
 
+// $select-bg-color: #f9f9f9;
+// $select-border-color: #444444;
+// $select-bg-color-error: rgb(255, 102, 102);
+// $select-label-color: #b0b0b0;
+// $select-label-color-dark: #ffffff;
+// $select-text-color: #222222;
+// $select-placeholder-color: #757575;
+// $select-list-bg-color: #f9f9f9;
+// $select-list-border-color: #555555;
+// $select-list-item-hover-color: #333333;
+// $select-list-item-selected-color: #1e88e5;
+// $select-list-item-text-color: #222222;
+// $select-list-item-subtext-color: #999999;
+// $box-shadow-color: rgba(0, 0, 0, 0.1);
+// $select-box-shadow: 0 0 20px 0 $box-shadow-color;
+
 .required {
   &::after {
     content: '*';
