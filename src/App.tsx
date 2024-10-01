@@ -1,10 +1,10 @@
 // src/App.tsx
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Demos from './pages';
+import Demos from '@/pages/Demos';
 import '@/assets/styles/index.scss';
-import Moon from './assets/icons/Moon';
-import Sun from './assets/icons/Sun';
+import Moon from '@/assets/icons/Moon';
+import Sun from '@/assets/icons/Sun';
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<string>('light');
@@ -29,14 +29,6 @@ const App: React.FC = () => {
       <button onClick={toggleTheme} className="theme-toggle">
         {theme === 'dark-theme' ? <Sun /> : <Moon />}
       </button>
-
-      {/* <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-        </ul>
-      </nav> */}
 
       <Routes>
         <Route path="/" element={<Demos />} />

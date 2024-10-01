@@ -49,12 +49,17 @@
         color: $text-color-dark;
 
         .table-btn {
-          background-color: $primary-color;
-          color: $primary-text-color;
-          border: none;
+          background-color: transparent;
+          color: $text-color-middle;
+          border: 1px dashed $border-color;
           padding: 8px 12px;
           border-radius: 4px;
           cursor: pointer;
+          transition: all 0.3s ease-out;
+
+          &:hover {
+            background-color: $background-dark;
+          }
         }
       }
     }
