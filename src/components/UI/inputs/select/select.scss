@@ -1,0 +1,199 @@
+@import '../../../../assets/styles/collections/_variables.scss';
+
+$select-bg-color: $background-light;
+$select-border-color: $border-color;
+$select-bg-color-error: $error-color;
+$select-label-color: #b0b0b0;
+$select-label-color-dark: $text-color-dark;
+$select-text-color: $text-color-dark;
+$select-placeholder-color: $text-color-dark;
+$select-list-bg-color: $background-light;
+$select-list-border-color: $border-color;
+$select-list-item-hover-color: $border-color;
+$select-list-item-selected-color: $primary-color;
+$select-list-item-text-color: $text-color-dark;
+$select-list-item-subtext-color: #999999;
+$select-box-shadow: 0 0 20px 0 $box-shadow-color;
+
+.required {
+  &::after {
+    content: '*';
+    color: $select-bg-color-error;
+  }
+}
+
+.select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &.error {
+    --select-border: #{$select-bg-color-error};
+  }
+
+  &.dark {
+    --label-color: #{$select-label-color-dark};
+  }
+
+  &.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+
+    .input {
+      cursor: not-allowed;
+
+      svg,
+      input {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &.big {
+    --input-height: 37px;
+
+    label {
+      font-weight: 500;
+      font-size: 16px;
+      color: $select-label-color;
+      line-height: 120%;
+    }
+  }
+
+  label {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--label-color, $select-label-color);
+    line-height: 120%;
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+  .input {
+    display: flex;
+    position: relative;
+    box-shadow: $select-box-shadow;
+    border-radius: 8px;
+
+    input {
+      width: 100%;
+      padding: 0 9px;
+      height: var(--input-height, 35px);
+      background-color: $select-bg-color;
+      border: 1px solid var(--select-border, $select-border-color);
+      border-radius: 8px;
+
+      font-weight: 400;
+      font-size: 14px;
+      color: $select-text-color;
+      line-height: 120%;
+      cursor: pointer;
+
+      &::placeholder {
+        color: $select-placeholder-color;
+      }
+
+      &.fix-position {
+        text-indent: 35px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .chevron {
+      position: absolute;
+      right: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &.open {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 25%;
+      left: 10px;
+      width: 30px;
+      height: 20px;
+    }
+  }
+
+  .list {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    max-height: 149.4px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid $select-list-border-color;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition:
+      border-color 0.2s,
+      opacity 0.2s,
+      visibility 0.2s,
+      transform 0.2s;
+    box-shadow: $select-box-shadow;
+
+    display: flex;
+    flex-direction: column;
+    background-color: $select-list-bg-color;
+
+    &.open {
+      transform: unset;
+      overflow: scroll;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__item {
+      padding: 10px 12px;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-weight: 400;
+      font-size: 14px;
+      color: $select-list-item-text-color;
+      line-height: 120%;
+
+      transition: color 0.2s;
+
+      &:hover,
+      &.selected {
+        color: $select-list-item-selected-color;
+      }
+
+      & .fix-position {
+        padding-left: 35px;
+      }
+
+      img {
+        position: absolute;
+        left: 10px;
+        width: 30px;
+        height: 20px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        color: $select-list-item-subtext-color;
+      }
+    }
+  }
+}

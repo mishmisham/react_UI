@@ -1,0 +1,82 @@
+@import '../../../../assets/styles/collections/_variables.scss';
+
+$textarea-label-color: #b0b0b0;
+$textarea-label-color-dark: #ffffff;
+$textarea-text-color: $text-color-dark;
+$textarea-border-color: $border-color;
+$textarea-bg-color-error: $error-color;
+$textarea-bg-color: $background-light;
+$textarea-box-shadow: 0 0 20px 0 $box-shadow-color;
+$textarea-placeholder-color: $placeholder-color;
+$textarea-sublabel-color: $text-color-dark;
+
+.required {
+  &::after {
+    content: '*';
+    color: $textarea-bg-color-error;
+  }
+}
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    label {
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--label-color, $textarea-label-color);
+      line-height: 120%;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 12px;
+      color: $textarea-sublabel-color;
+    }
+  }
+
+  textarea {
+    padding: 10px 9px;
+    height: 80px;
+    border: 1px solid var(--textarea-border, $textarea-border-color);
+    border-radius: 6px;
+    resize: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: $textarea-text-color;
+    line-height: 120%;
+    overflow: auto;
+    box-shadow: $textarea-box-shadow;
+    background: $textarea-bg-color;
+
+
+    &::placeholder {
+      color: $textarea-text-color;
+      background: $textarea-bg-color;
+    }
+
+    &.scrollable {
+      overflow-y: scroll;
+    }
+  }
+
+  &.dark {
+    --label-color: #{$textarea-label-color-dark};
+  }
+
+  &.error {
+    --textarea-border: #{$textarea-bg-color-error};
+  }
+
+  &.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,137 @@
+@import '../../../../assets/styles/collections/_variables.scss';
+
+$range-slider-track-color: $placeholder-color;
+$range-slider-thumb-color: #f1f5f7;
+$range-slider-thumb-shadow-color: #ced4da;
+$range-slider-thumb-shadow: 0 0 1px 1px $range-slider-thumb-shadow-color;
+
+$range-slider-thumb-size: 18px;
+$range-slider-thumb-border-radius: 50%;
+
+$range-slider-values-font-size: 12px;
+$range-slider-values-color: $text-color-dark;
+
+.range-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled,
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+
+  &.primary {
+    .slider__range {
+      z-index: 2;
+      background-color: $primary-color;
+    }
+  }
+
+  &.secondary {
+    .slider__range {
+      z-index: 2;
+      background-color: $secondary-color;
+    }
+  }
+
+  &.danger {
+    .slider__range {
+      z-index: 2;
+      background-color: $danger-color;
+    }
+  }
+}
+
+.slider {
+  position: relative;
+  width: 200px;
+}
+
+.slider__track,
+.slider__range,
+.slider__left-value,
+.slider__right-value {
+  position: absolute;
+}
+
+.slider__track,
+.slider__range {
+  border-radius: 3px;
+  height: 5px;
+}
+
+.slider__track {
+  background-color: $range-slider-track-color;
+  width: 100%;
+  z-index: 1;
+}
+
+.slider__left-value,
+.slider__right-value {
+  color: $range-slider-values-color;
+  font-size: $range-slider-values-font-size;
+  margin-top: 6px;
+}
+
+.slider__left-value {
+  left: 6px;
+}
+
+.slider__right-value {
+  right: 6px;
+}
+
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 200px;
+  outline: none;
+  margin-top: 5px;
+}
+
+.thumb--left {
+  z-index: 3;
+}
+
+.thumb--right {
+  z-index: 4;
+}
+
+.thumb--single {
+  z-index: 5;
+}
+
+.thumb::-webkit-slider-thumb {
+  background-color: $range-slider-thumb-color;
+  border: none;
+  border-radius: 50%;
+  box-shadow: $range-slider-thumb-shadow;
+  cursor: pointer;
+  height: $range-slider-thumb-size;
+  width: $range-slider-thumb-size;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+.thumb::-moz-range-thumb {
+  background-color: $range-slider-thumb-color;
+  border: none;
+  border-radius: 50%;
+  box-shadow: $range-slider-thumb-shadow;
+  cursor: pointer;
+  height: $range-slider-thumb-size;
+  width: $range-slider-thumb-size;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}

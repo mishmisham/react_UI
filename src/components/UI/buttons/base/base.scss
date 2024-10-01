@@ -1,0 +1,67 @@
+@import '../../../../assets/styles/collections/_variables.scss';
+
+$primary-button-bg: $primary-color;
+$primary-button-text: $primary-text-color;
+$primary-button-shadow: $primary-shadow;
+
+$secondary-button-bg: $secondary-color;
+$secondary-button-text: $secondary-text-color;
+$secondary-button-shadow: $secondary-shadow;
+
+$danger-button-bg: $danger-color;
+$danger-button-text: $danger-text-color;
+$danger-button-shadow: $danger-shadow;
+
+$loader-color: $primary-text-color;
+$loader-border-color: rgba($primary-text-color, 0.2);
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  position: relative;
+  border-radius: 8px;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: $disabled-opacity;
+  }
+
+  span {
+    margin: 0 8px;
+  }
+
+  .loader {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 20px);
+    border: 4px solid $loader-border-color;
+    border-top: 4px solid $loader-color;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+  }
+
+  &--primary {
+    color: $primary-button-text;
+    background-color: $primary-button-bg;
+    box-shadow: 0 10px 20px -10px $primary-button-shadow;
+  }
+
+  &--secondary {
+    color: $secondary-button-text;
+    background-color: $secondary-button-bg;
+    box-shadow: 0 10px 20px -10px $secondary-button-shadow;
+  }
+
+  &--danger {
+    color: $danger-button-text;
+    background-color: $danger-button-bg;
+    box-shadow: 0 10px 20px -10px $danger-button-shadow;
+  }
+}

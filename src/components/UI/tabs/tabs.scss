@@ -1,0 +1,93 @@
+@import '../../../assets/styles/collections/_variables.scss';
+
+$default-color: $text-color-dark;
+$default-bg: $placeholder-color;
+$default-shadow: rgba(0, 0, 0, 0.1);
+
+.tabs {
+  min-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  background: $default-bg;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: $default-color;
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    &:not(.disabled):hover {
+      color: $primary-color;
+    }
+
+    &.active {
+      background: #ffffff;
+      box-shadow: 0 10px 20px -10px $default-shadow;
+      border-radius: 8px;
+      color: $primary-color;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: $disabled-opacity;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &--primary {
+    .tabs__item {
+      &:hover {
+        color: $primary-color;
+      }
+
+      &.active {
+        background-color: $primary-color;
+        color: $primary-text-color;
+        box-shadow: 0 10px 20px -10px $primary-shadow;
+      }
+    }
+  }
+
+  &--secondary {
+    .tabs__item {
+      &:hover {
+        color: $secondary-color;
+      }
+
+      &.active {
+        background-color: $secondary-color;
+        color: $secondary-text-color;
+        box-shadow: 0 10px 20px -10px $secondary-shadow;
+      }
+    }
+  }
+
+  &--danger {
+    .tabs__item {
+      &:hover {
+        color: $danger-color;
+      }
+
+      &.active {
+        background-color: $danger-color;
+        color: $danger-text-color;
+        box-shadow: 0 10px 20px -10px $danger-shadow;
+      }
+    }
+  }
+}

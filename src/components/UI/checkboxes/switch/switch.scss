@@ -1,0 +1,63 @@
+@import "../../../../assets/styles/collections/_variables.scss";
+$switch-bg-color: transparent;
+
+.switch {
+  position: relative;
+  transition: all 0.3s ease-out;
+  background: $switch-bg-color;
+  border: 2px solid $switch-bg-color;
+  border-radius: 28px;
+  height: 24px;
+  width: 48px;
+  cursor: pointer;
+
+  &.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-out;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    color: $text-color-dark;
+  }
+
+  &.active {
+    .switch__icon {
+      left: 24px;
+    }
+  }
+
+  &.primary {
+    border: 2px solid $primary-color;
+
+    &.active {
+      background: $primary-color;
+      border: 2px solid $primary-color;
+    }
+  }
+
+  &.secondary {
+    border: 2px solid $secondary-color;
+
+    &.active {
+      background: $secondary-color;
+      border: 2px solid $secondary-color;
+    }
+  }
+
+  &.danger {
+    border: 2px solid $danger-color;
+
+    &.active {
+      background: $danger-color;
+      border: 2px solid $danger-color;
+    }
+  }
+}

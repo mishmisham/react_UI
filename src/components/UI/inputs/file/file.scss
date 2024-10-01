@@ -1,0 +1,212 @@
+@import '../../../../assets/styles/collections/_variables.scss';
+
+$dragndrop-background-light: $background-light;
+$dragndrop-background-dark: $background-dark;
+$dragndrop-border-light: #e0e0e0;
+$dragndrop-border-dashed: #d0d0d0;
+$dragndrop-shadow: rgba(94, 92, 154, 0.06);
+$dragndrop-text-black: $text-color-dark;
+$dragndrop-text-grey: $text-color-dark;
+$dragndrop-text-white: $text-color-light;
+
+$dragndrop-text-grey-dark: $text-color-dark;
+$dragndrop-text-grey-light: $text-color-middle;
+$dragndrop-button-background: #f0f0f0;
+$dragndrop-button-background-hover: #c0c0c0;
+
+.load-error {
+  padding: 9px 12px;
+  background: $dragndrop-background-dark;
+  border-radius: 10px;
+
+  &__close {
+    cursor: pointer;
+  }
+}
+
+.small-container {
+  padding: 18px 80px 18px 13px;
+  background: $dragndrop-background-light;
+  border: 1px solid $dragndrop-border-light;
+  box-shadow: 0 0 40px $dragndrop-shadow;
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: $dragndrop-text-black;
+
+  & span {
+    text-decoration: underline;
+  }
+}
+
+.drag-drop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $dragndrop-background-light;
+  border: 1px dashed $dragndrop-border-dashed;
+  border-radius: 8px;
+  padding: 20px;
+
+  &__title {
+    cursor: default;
+    align-self: flex-start;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 1px;
+    color: $dragndrop-text-grey-dark;
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    cursor: default;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 1px;
+    color: $dragndrop-text-grey-dark;
+  }
+
+  &__ext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    cursor: default;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: 1px;
+    color: $dragndrop-text-grey;
+
+    padding-top: 10px;
+    opacity: 0.5;
+  }
+
+  &__btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px 18px;
+    background: transparent;
+    border-radius: 6px;
+    border: 1px solid $dragndrop-button-background;
+
+    margin-top: 20px;
+
+    font-weight: 400;
+    font-size: 14px;
+    color: $dragndrop-text-grey-dark;
+  }
+}
+
+.preview {
+  &.image {
+    height: 225px;
+    background-blend-mode: multiply;
+  }
+
+  &.small {
+    width: 300px;
+    margin-top: 0;
+  }
+
+  width: 430px;
+  background: $dragndrop-background-dark;
+  height: fit-content;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 9px 12px;
+
+  p {
+    margin: 0;
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: default;
+
+    &__name {
+      color: $dragndrop-text-white;
+      font-size: 14px;
+      line-height: 120%;
+      letter-spacing: 1px;
+      max-width: 120px;
+      font-weight: 700;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &__size {
+      color: $dragndrop-text-grey-light;
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 700;
+    }
+
+    button {
+      background: $dragndrop-border-light;
+      border: none;
+      border-radius: 100%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        background: $dragndrop-button-background-hover;
+      }
+
+      &:active {
+        transform: scale(0.8);
+      }
+    }
+  }
+
+  &-message {
+    color: $dragndrop-text-white;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 1px;
+    text-align: right;
+    font-weight: 700;
+  }
+
+  &-description {
+    margin-top: 2px;
+    color: $dragndrop-text-grey-light;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 700;
+    text-align: right;
+  }
+}
