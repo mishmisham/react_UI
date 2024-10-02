@@ -26,6 +26,9 @@ const TabsDemo: React.FC = () => {
     setAsyncMessage('Проверка завершена!');
   };
 
+  // mish
+  // отдельный файлик)
+  // а views тоже стоит распихать по одноименным папкам 
   const tabsData = [
     { title: 'Таб 1', value: 'tab1' },
     { title: 'Таб 2', value: 'tab2', disabled: true },

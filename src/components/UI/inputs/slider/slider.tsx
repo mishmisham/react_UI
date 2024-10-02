@@ -31,6 +31,8 @@ const RangeSlider: React.FC<SliderProps> = ({
     [min, max]
   );
 
+  // mish
+  // опять два useEffect =)
   useEffect(() => {
     const minPercent = getPercent(minVal);
     const maxPercent = getPercent(singleRange ? maxVal : maxValRef.current);
@@ -45,6 +47,15 @@ const RangeSlider: React.FC<SliderProps> = ({
     onChange({ min: minVal, max: maxVal });
   }, [minVal, maxVal]);
 
+  // mish
+  // onChange={(event) => и тд - нужно ее все же вынести в код)
+  /*
+    const myFunction = (e) => { ... }
+
+    ....
+
+    onChange={myFunction} // аргумент автоматом передастся при событии - обрати внимание - тут без скобок
+  */
   return (
     <div className={`range-slider ${theme} ${disabled ? 'disabled' : ''}`}>
       {!singleRange && (

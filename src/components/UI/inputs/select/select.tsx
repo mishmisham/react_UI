@@ -48,6 +48,14 @@ const Select: React.FC<SelectProps> = ({
   const [currentInput, setCurrentInput] = useState<number | string | null>(value);
   const listRef = useRef<HTMLDivElement>(null);
 
+  // mish
+  // стоит длинное содержимое внутри хуков выносить в отдельные функции
+  /*
+    const needDisplayOption = keyToDisplay && options.length > 0;
+    if (needDisplayOption) {
+      getDisplayValue()
+    }
+  */
   useEffect(() => {
     if (keyToDisplay && options.length > 0) {
       const foundItem = options.find((i) => i[keyToDisplay] === value);
@@ -56,7 +64,10 @@ const Select: React.FC<SelectProps> = ({
   }, [value, options, keyToDisplay]);
 
   const getDescription = (item: Option) => {
+    // mish
+    // лучше отказаться от безскобочных пассажей такого рода
     if (!optionDescriptionParams) return '';
+
     return optionDescriptionParams
       .map((param) => {
         const value = getNestedProperty(item, param.path);
@@ -70,11 +81,15 @@ const Select: React.FC<SelectProps> = ({
     return path.split('.').reduce((acc, part) => acc && acc[part], obj);
   };
 
+  // mish
+  // подумай, как объединить эту функцию с той что в useEffect
   const getDisplayValue = () => {
     const foundItem = options.find((i) => i.id === currentInput);
     return foundItem ? foundItem[keyToDisplay || 'name'] : '';
   };
 
+  // mish
+  // подумай, как уменьшить количество ифов
   const handleChange = (id: number | string | null, item: Option) => {
     if (currentInput === id) {
       setCurrentInput(null);
@@ -90,6 +105,11 @@ const Select: React.FC<SelectProps> = ({
     setOpen(false);
   };
 
+  // mish
+  // лучше - условия в человекопонятные переменные
+  // if (!myCoolRule)
+  // { return }
+  // setOpen(false);
   const handleDocumentClick = (event: MouseEvent) => {
     if (listRef.current && !listRef.current.contains(event.target as Node)) {
       setOpen(false);
@@ -103,6 +123,10 @@ const Select: React.FC<SelectProps> = ({
     }
   };
 
+   // mish
+   /*
+    2 useEffect лучше не надо - лучше в одном useEffect две отдельных функции
+   */
   useEffect(() => {
     document.addEventListener('mousedown', handleDocumentClick);
     return () => {

@@ -75,6 +75,15 @@ const Input: React.FC<IInput> = ({
     clickInclude && clickInclude();
   };
 
+  // mish
+  /*
+    - Стоит добавить еще инпутам параметр name - бывает нужно
+    например при отправке формы, чтобы определить какой инпут отправил
+
+    - Длинные правила для переменных (например имена классов) лучше вынести в код
+      const wrapperClassName = ...
+  */
+
   return (
     <div
       className={`input ${dark ? 'dark' : ''} ${error ? 'error' : ''} ${

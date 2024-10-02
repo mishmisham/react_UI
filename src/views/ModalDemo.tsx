@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// mish
+// если ты импортируешь стили компонента в компонент (и это правильно) - сюда тащить их не нужно
 import Modal from '@/components/UI/modal/modal';
 import './DemoTable.scss';
 

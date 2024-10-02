@@ -9,6 +9,8 @@ import Sun from '@/assets/icons/Sun';
 const App: React.FC = () => {
   const [theme, setTheme] = useState<string>('light');
 
+  // mish
+  // toggleTheme стоит сделать отдельным компонентом
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);

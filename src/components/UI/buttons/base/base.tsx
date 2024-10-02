@@ -31,6 +31,19 @@ const Button: React.FC<ButtonProps> = ({
     }
   };
 
+  // mish
+  /*
+    удобно писать атрибуты столбиком)
+    таже удобно выработать определенное правило упорядочивания атрибутов
+    например сначала onClick || onInput .и тд, затем пропсы и динамические параметры, затем прочие
+    <button
+      onClick={evtHandler}
+      className="class"
+    >
+      text
+    </button>
+  */
+
   return (
     <button disabled={isLoading || disabled} className={`btn btn--${type}`} onClick={handleClick}>
       {isLoading && <span className="loader"></span>}

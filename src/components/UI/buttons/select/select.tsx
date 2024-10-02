@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import Chevron from '@/assets/icons/Chevron';
 import './select.scss';
 
+// mish
+// интерфейсам лучше заводить отдельные файлики
 interface IButtonSelect {
   theme?: 'primary' | 'secondary' | 'danger';
   options: { id: number; name: string; action?: () => void }[];
@@ -24,6 +26,14 @@ const ButtonSelect: React.FC<IButtonSelect> = ({
     }
   };
 
+  // mish
+  /*
+      const isNotCurrent = ref.current && !ref.current.contains(event.target as Node)
+      if (!isNotCurrent) {
+        return
+      }
+      setOpen(false);
+  */
   const handleClickOutside = (event: MouseEvent) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {
       setOpen(false);

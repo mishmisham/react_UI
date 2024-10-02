@@ -74,6 +74,8 @@ const TreeSelect: React.FC<TreeSelectProps> = ({
     );
   };
 
+  // mish
+  // отдельные шаблоны лучше выносить в отдельные компоненты (например тут же создавать директорию parts и там их создавать)
   const renderTree = (nodes: TreeNode[]) => {
     return nodes.map((node) => {
       const isExpanded = expandedNodes.includes(node.id);

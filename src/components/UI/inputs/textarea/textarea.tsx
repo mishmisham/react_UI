@@ -39,6 +39,9 @@ const Textarea: React.FC<ITextareaProps> = ({
   useEffect(() => {
     if (autoExpand && textareaRef.current) {
       textareaRef.current.style.height = 'auto';
+      // mish
+      // гых) у тебя круче чем у меня ) 
+      // https://github.com/mishmisham/easy-chat-emulator-template/blob/main/src/components/input/text-input/TextareaInput.vue
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`; // Устанавливаем высоту по контенту
     }
   }, [value, autoExpand]);
